@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2 class="container-fluid">Войти в аккаунт</h2>
+  {% if error %}
+    <p class="text-danger container-fluid">{{ error }}</p>
+  {% endif %}
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group container-fluid">
+      <label for="id_username">Email:</label>
+      <input type="text" name="username" class="form-control">
+    </div>
+      <br>
+    <div class="form-group container-fluid">
+      <label for="id_password">Пароль:</label>
+      <input type="password" name="password" class="form-control">
+    </div>
+      <br>
+    <button type="submit" class="btn btn-primary mx-auto d-block">Login</button>
+  </form>
+{% endblock %}
